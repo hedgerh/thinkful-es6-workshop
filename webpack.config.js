@@ -1,10 +1,17 @@
 var path = require('path');
 var webpack = require('webpack');
 
+//var host = 'localhost'
+// var port = '3000'
+
+//will help to run it on cloud9 (c9.io)
+var host = process.env.IP ; 
+var port = process.env.PORT ; 
+
 module.exports = {
   devtool: 'eval',
   entry: [
-    'webpack-dev-server/client?http://localhost:3000',
+    'webpack-dev-server/client?https://'+host+':' + port,
     'webpack/hot/only-dev-server',
     './src/index'
   ],
